@@ -24,7 +24,7 @@ app.post('/send-email', async (req, res) => {
       from: process.env.EMAIL_USER,
       to: "sales@cloudcreatorz.com",
       subject: subject,
-      text: text,
+      text: `From : ${to}`,
       html: '<p>Hello, this is a test email.</p>', 
     });
    
