@@ -22,7 +22,7 @@ app.post('/send-email', async (req, res) => {
   try {
     const info = await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: to,
+      to: "sales@cloudcreatorz.com",
       subject: subject,
       text: text,
       html: '<p>Hello, this is a test email.</p>', 
