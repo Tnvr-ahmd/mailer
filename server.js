@@ -24,10 +24,34 @@ app.post('/send-email', async (req, res) => {
       from: process.env.EMAIL_USER,
       to: "sales@cloudcreatorz.com , thanveerahamed1100@gmail.com",
       subject: subject,
-      text: `From : ${to} \n
-             Name : ${name}\n
-             message: ${text}`,
-      html: '<p>Hello, this is a test email.</p>', 
+      html:`<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0;">
+          <!-- Header Section -->
+          <header style="background-color: #4CAF50; padding: 20px; text-align: center; color: white;">
+            <img src="https://yourdomain.com/logo.png" alt="Company Logo" style="width: 120px; margin-bottom: 10px;">
+            <h1 style="margin: 0;">Your Company Name</h1>
+          </header>
+
+          <!-- Body Section -->
+          <main style="padding: 20px; text-align: center;">
+            <h2 style="color: #333;">New Contact Form Submission</h2>
+            <p style="color: #555;">You have received a new message from the contact form on your website.</p>
+
+            <!-- Details Section -->
+            <div style="background-color: #f9f9f9; padding: 20px; border-radius: 5px; margin-top: 20px;">
+              <p><strong>Name:</strong> ${name}</p>
+              <p><strong>Email:</strong> ${to}</p>
+              <p><strong>Message:</strong></p>
+              <p style="color: #333; font-style: italic;">${text}</p>
+            </div>
+          </main>
+
+          <!-- Footer Section -->
+          <footer style="background-color: #4CAF50; padding: 15px; text-align: center; color: white; margin-top: 20px;">
+            <p style="margin: 0; font-size: 14px;">&copy; ${new Date().getFullYear()} Your Company Name</p>
+            <p style="margin: 0; font-size: 12px;">1234 Street Address, City, State, Zip Code</p>
+            <p style="margin: 0; font-size: 12px;">Phone: (123) 456-7890 | Email: support@yourdomain.com</p>
+          </footer>
+        </div>` , 
     });
    
    console.log('Email sent:', info.messageId);
