@@ -14,21 +14,23 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-
+app.use('/public', express.static('public'));
+const logoUrl = `http://localhost:4000/public/logo.png`;
 // API route to send an email
 app.post('/send-email', async (req, res) => {
   const {name,to,subject,text}=req.body
   console.log(to)
   try {
+    //,reyaskhan001@gmail.com  sales@cloudcreatorz.com , 
     const info = await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: "sales@cloudcreatorz.com , thanveerahamed1100@gmail.com",
+      to: "thanveerahamed1100@gmail.com",
       subject: subject,
       html:`<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0;">
           <!-- Header Section -->
-          <header style="background-color: #4CAF50; padding: 20px; text-align: center; color: white;">
-            <img src="https://yourdomain.com/logo.png" alt="Company Logo" style="width: 120px; margin-bottom: 10px;">
-            <h1 style="margin: 0;">Your Company Name</h1>
+          <header style="background-color: #1a1a1a; padding: 20px; text-align: center; color: white;">
+            <img src=${logoUrl} alt="Company Logo" style="width: 120px; margin-bottom: 10px;">
+            <h1 style="margin: 0;">cloud creatorz </h1>
           </header>
 
           <!-- Body Section -->
