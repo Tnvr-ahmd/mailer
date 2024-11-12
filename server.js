@@ -145,7 +145,7 @@ app.post('/send-email', async (req, res) => {
             <img src="${logoUrl}" alt="Company Logo" style="width: 120px;">
           </div>
           <div style="flex: 2; text-align: left;">
-            <h5 style="margin: 0;padding-left: 100px; font-size: 24px; color: #ffffff;">Cloud Creatorz</h5>
+            <h5 style="margin: 0; font-size: 24px; color: #ffffff;">Cloud Creatorz</h5>
           </div>
         </header>
 
@@ -165,9 +165,9 @@ app.post('/send-email', async (req, res) => {
 
           <!-- Footer Section -->
           <footer style="background-color: #1a1a1a; padding: 15px; text-align: center; color: white; margin-top: 20px;">
-            <p style="margin: 0; font-size: 14px;">&copy; ${new Date().getFullYear()} Your Company Name</p>
-            <p style="margin: 0; font-size: 12px;">1234 Street Address, City, State, Zip Code</p>
-            <p style="margin: 0; font-size: 12px;">Phone: (123) 456-7890 | Email: <a href="mailto:sales@cloudcreatorz.com">sales@cloudcreatorz.com</a></p>
+            <p style="margin: 0; font-size: 14px;color: white;">&copy; ${new Date().getFullYear()} Cloud Creatorz</p>
+            <p style="margin: 0; font-size: 12px;color: white;">1234 Street Address, City, State, Zip Code</p>
+            <p style="margin: 0; font-size: 12px;color: white;">Phone: (123) 456-7890 | Email: <a href="mailto:sales@cloudcreatorz.com">sales@cloudcreatorz.com</a></p>
           </footer>
         </div>` , 
     });
