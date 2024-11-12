@@ -15,7 +15,7 @@ let transporter = nodemailer.createTransport({
 });
 
 app.use('/public', express.static('public'));
-const logoUrl = `http://localhost:4000/public/logo.png`;
+const logoUrl = `https://mailer-qobf.onrender.com/public/logo.png`;
 // API route to send an email
 app.post('/send-email', async (req, res) => {
   const {name,to,subject,text}=req.body
